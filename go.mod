@@ -1,3 +1,3 @@
-module tools_for_anner
+module github.com/HelloAnner/a-tools
 
 go 1.16
