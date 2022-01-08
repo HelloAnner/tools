@@ -1,4 +1,4 @@
-package compression
+package compression_tools
 
 import (
 	"archive/zip"

@@ -1,4 +1,4 @@
-package command
+package command_tools
 
 import (
 	"bytes"
