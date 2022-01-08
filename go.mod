@@ -1,3 +1,3 @@
-module github.com/HelloAnner/a-tools
+module github.com/HelloAnner/tools
 
 go 1.16

@@ -1,4 +1,4 @@
-package settools
+package set
 
 import "sort"
 
