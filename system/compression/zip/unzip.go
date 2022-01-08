@@ -3,7 +3,7 @@ package compression
 import (
 	"archive/zip"
 	"fmt"
-	errortools "github.com/HelloAnner/a-tools/error"
+	errortools "github.com/HelloAnner/tools/error"
 	"io"
 	"os"
 	"path/filepath"
