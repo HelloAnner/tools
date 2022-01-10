@@ -1,31 +1,44 @@
 package io_tools
 
 import (
-	errors "github.com/HelloAnner/tools/error"
 	"io/ioutil"
 	"os"
 )
 
 // Ls 列出文件夹下的所有文件，不递归
-func Ls(dirPath string) ([]string, error) {
+func Ls(dirPath string) []string {
 	var res []string
 
 	if !IsDir(dirPath) {
-		return res, errors.New(dirPath + " is not dir")
+		return res
 	}
 
 	infos, err := ioutil.ReadDir(dirPath)
 
 	if err != nil {
-		return res, err
+		return res
 	}
 
 	for _, info := range infos {
 		res = append(res, info.Name())
 	}
 
-	return res, nil
+	return res
 
+}
+
+func LsWithFilter(dirPath string, allow func(name string) bool) []string {
+	var res []string
+
+	allNames := Ls(dirPath)
+
+	for _, name := range allNames {
+		if allow(name) {
+			res = append(res, name)
+		}
+	}
+
+	return res
 }
 
 func IsDir(filePath string) bool {
