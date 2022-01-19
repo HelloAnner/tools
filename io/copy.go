@@ -3,7 +3,6 @@ package io_tools
 import (
 	"fmt"
 	"io"
-	"log"
 	"os"
 )
 
@@ -31,6 +30,5 @@ func Copy(from, to string) (int64, error) {
 
 	defer destination.Close()
 	nBytes, err := io.Copy(destination, source)
-	log.Printf("copy file %s --> %s\n", from, to)
 	return nBytes, err
 }
